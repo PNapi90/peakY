@@ -5,10 +5,14 @@
 PeakFinder::PeakFinder(std::vector<int> &d0s,
                        int _binsE,
                        int _binsX,
-                       int _thrNum)
+                       int _thrNum,
+                       int _Egamma,
+                       double _MaxArea)
     : binsE(_binsE),
       binsX(_binsX),
-      thrNum(_thrNum)
+      thrNum(_thrNum),
+      Egamma(_Egamma),
+      MaxArea(_MaxArea)
 {
     d0Range = std::vector<int>(2,0);
     
@@ -29,7 +33,7 @@ PeakFinder::PeakFinder(std::vector<int> &d0s,
                       std::vector<std::vector<int>>(binsE,
                       std::vector<int>(2,0)));
 
-    folder = "Histograms/EGamma_661/d0_";
+    folder = "Histograms/EGamma_" + std::to_string(Egamma) + "/d0_";
     
     std::cout << "Created PeakFinder # " << thrNum << " with d0 in [" << d0Range[0] << "," << d0Range[1] << ")" << std::endl;
 }
@@ -156,7 +160,7 @@ void PeakFinder::FindThreshold(int iter)
     bool Escape = false;
 
 
-    double MaxArea = 0.95;
+    
 
     double binwidth = 1;//180./((double) binsX);
 

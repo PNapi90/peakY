@@ -13,7 +13,9 @@ class PeakFinder
 private:
 
     bool saveCalled;
-    int binsE,binsX,thrNum;
+    int binsE,binsX,thrNum,Egamma;
+
+    double MaxArea;
 
     std::string folder;
     std::vector<int> d0Range;
@@ -33,7 +35,9 @@ public:
     PeakFinder(std::vector<int> &d0s,
                int _binsE,
                int _binsX,
-               int _thrNum);
+               int _thrNum,
+               int _Egamma,
+               double _MaxArea); 
     ~PeakFinder();
 
     std::thread threading();
