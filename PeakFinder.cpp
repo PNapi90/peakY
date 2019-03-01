@@ -33,7 +33,7 @@ PeakFinder::PeakFinder(std::vector<int> &d0s,
                       std::vector<std::vector<int>>(binsE,
                       std::vector<int>(2,0)));
 
-    folder = "Histograms/EGamma_" + std::to_string(Egamma) + "/d0_";
+    folder = "Histograms/ExpEGamma_" + std::to_string(Egamma) + "/d0_";
     
     std::cout << "Created PeakFinder # " << thrNum << " with d0 in [" << d0Range[0] << "," << d0Range[1] << ")" << std::endl;
 }
